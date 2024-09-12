@@ -1,15 +1,68 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
+  "pluginAlias": "ReolinkControl",
   "pluginType": "platform",
   "singular": true,
   "schema": {
     "type": "object",
     "properties": {
-      "name": {
-        "title": "Name",
+      "ipAddress": {
+        "title": "NVR IP Address",
         "type": "string",
         "required": true,
-        "default": "Example Dynamic Platform"
+        "default": "192.168.1.1"
+      },
+      "username": {
+        "title": "Username",
+        "type": "string",
+        "required": true,
+        "default": "admin"
+      },
+      "password": {
+        "title": "Password",
+        "type": "string",
+        "required": true
+      },
+      "cameras": {
+        "title": "Cameras",
+        "type": "array",
+        "required": true,
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Camera Name",
+              "type": "string",
+              "required": true
+            },
+            "channel": {
+              "title": "Camera Channel",
+              "type": "number",
+              "required": true
+            },
+            "disabledPtzPresetId": {
+              "title": "PTZ preset id when disabled",
+              "type": "number",
+              "required": false
+            },
+            "maskBlackOut": {
+              "title": "Mask out entire camera view",
+              "type": "boolean",
+              "required": false,
+              "default": true
+            },
+            "disableAudio": {
+              "title": "Disable audio recording",
+              "type": "boolean",
+              "required": false,
+              "default": true
+            },
+            "disabledTimeout": {
+              "title": "Disable timeout (seconds)",
+              "type": "number",
+              "required": false
+            }
+          }
+        }
       }
     }
   }

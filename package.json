@@ -1,22 +1,23 @@
 {
-  "name": "homebridge-plugin-name",
-  "displayName": "Plugin Name",
+  "name": "homebridge-reolink-control",
+  "displayName": "Reolink Control",
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "A short description about what your plugin does.",
-  "author": "Your Name",
+  "description": "A plugin for Reolink cameras privacy control",
+  "author": "Fyodor",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/USERNAME/GITHUB_PROJECT_NAME#readme",
+  "homepage": "https://github.com/fyodorvi/homebridge-reolink-control#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/USERNAME/GITHUB_PROJECT_NAME.git"
+    "url": "https://github.com/fyodorvi/homebridge-reolink-control.git"
   },
   "bugs": {
-    "url": "https://github.com/USERNAME/GITHUB_PROJECT_NAME/issues"
+    "url": "https://github.com/fyodorvi/homebridge-reolink-control/issues"
   },
   "keywords": [
-    "homebridge-plugin"
+    "homebridge-plugin",
+    "reolink"
   ],
   "main": "dist/index.js",
   "engines": {
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@types/eslint__js": "^8.42.3",
+    "@types/luxon": "^3.4.2",
     "@types/node": "^22.2.0",
     "eslint": "^9.9.0",
     "homebridge": "^2.0.0-beta.0",
@@ -40,5 +42,9 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "luxon": "^3.5.0"
   }
 }
