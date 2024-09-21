@@ -153,6 +153,13 @@ export namespace Reolink {
     online : number;
     typeInfo : string;
   }
+
+  export interface SetIrLightsParam {
+    IrLights: {
+      channel: number;
+      state: 'Auto' | 'On' | 'Off';
+    }
+  }
 }
 
 
@@ -342,4 +349,12 @@ export class ReolinkApi {
       cmd: 'GetchannelStatus',
     }) as Reolink.Channelstatus;
   }
+
+  public async SetIrLights(param: Reolink.SetIrLightsParam) {
+    await this.command({
+      cmd: 'SetIrLights',
+      param,
+    });
+  }
+
 }

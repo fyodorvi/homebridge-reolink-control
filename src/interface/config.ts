@@ -12,4 +12,5 @@ export interface ReolinkCameraConfig {
   maskBlackOut?: boolean;
   disabledPtzPresetId?: number;
   disabledTimeout?: number;
+  disableIrLights?: boolean
 }

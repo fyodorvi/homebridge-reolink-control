@@ -12,6 +12,7 @@
           "disabledPtzPresetId": 1,
           "maskBlackOut": true,
           "disableAudio": true,
+          "disableIrLights": true,
           "disabledTimeout": 30
         }
       ]

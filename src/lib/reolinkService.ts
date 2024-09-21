@@ -40,6 +40,15 @@ export class ReolinkService {
     });
   }
 
+  public async setIrLightsEnabled(channel: number, enabled: boolean): Promise<void> {
+    await this.api.SetIrLights({
+      IrLights: {
+        channel,
+        state: enabled ? 'Auto' : 'Off',
+      },
+    });
+  }
+
   public async getMonitorPoint(channel: number) {
     return await this.api.GetPtzGuard({ channel });
   }

@@ -56,6 +56,12 @@
               "required": false,
               "default": true
             },
+            "disableIrLights": {
+              "title": "Disable IR lights",
+              "type": "boolean",
+              "required": false,
+              "default": true
+            },
             "disabledTimeout": {
               "title": "Disable timeout (seconds)",
               "type": "number",

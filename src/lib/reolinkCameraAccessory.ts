@@ -67,6 +67,10 @@ export class ReolinkCameraAccessory {
       await reolink.setAudioEnabled(channel, true);
     }
 
+    if (this.config.disableIrLights) {
+      await reolink.setIrLightsEnabled(channel, true);
+    }
+
     if (this.config.disabledPtzPresetId) {
       if (this.states.monitorPointAuto) {
         // monitor point auto was enabled before it got disabled
@@ -98,6 +102,10 @@ export class ReolinkCameraAccessory {
       await reolink.setAudioEnabled(channel, false);
     }
 
+    if (this.config.disableIrLights) {
+      await reolink.setIrLightsEnabled(channel, false);
+    }
+
     if (this.config.disabledPtzPresetId) {
       const ptzGuard = await reolink.getMonitorPoint(channel);
       if (ptzGuard.benable === 1) {
@@ -114,7 +122,7 @@ export class ReolinkCameraAccessory {
   async setOn(value: CharacteristicValue) {
     this.platform.log.debug('Set Characteristic On ->', value);
 
-    if (!this.config.disableAudio && !this.config.maskBlackOut && this.config.disabledPtzPresetId === undefined) {
+    if (!this.config.disableAudio && !this.config.maskBlackOut && !this.config.disableIrLights && this.config.disabledPtzPresetId === undefined) {
       this.platform.log.error(`Camera ${this.config.name} has nothing to do!`);
       throw new this.platform.api.hap.HapStatusError(this.platform.api.hap.HAPStatus.SERVICE_COMMUNICATION_FAILURE);
     }

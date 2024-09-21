@@ -53,6 +53,8 @@ The example below contains comments, clean valid JSON version is here: [example/
           "maskBlackOut": true,
           // disables audio when camera is disabled 
           "disableAudio": true,
+          // disables IR lights when camera is disabled
+          "disableIrLights": true,
           // timeout after which camera will be enabled back 
           "disabledTimeout": 30
         }
